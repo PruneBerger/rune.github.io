@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mes bijoux</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #fafafa;
+    }
+    .produit {
+      border: 1px solid #ddd;
+      margin: 20px;
+      padding: 20px;
+      display: inline-block;
+    }
+    img {
+      width: 200px;
+    }
+    button {
+      background: black;
+      color: white;
+      padding: 10px;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Mes Bijoux ✨</h1>
+<p>Bijoux faits main</p>
+
+<div class="produit">
+  <img src="https://via.placeholder.com/200">
+  <h2>Collier doré</h2>
+  <p>20€</p>
+  <button onclick="contacter()">Commander</button>
+</div>
+
+<script>
+function contacter() {
+  window.location.href = "mailto:prune-berger@orange.fr";
+}
+</script>
+
+</body>
+</html>
