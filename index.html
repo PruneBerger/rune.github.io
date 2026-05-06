@@ -42,25 +42,26 @@ nav ul li {
 }
 
 nav ul li:hover {
-  color: #0000ff;
+  color: #ddd;
 }
 
 /* BANNIÈRE */
 .hero {
-  height: 60vh;
-  background: url("https://images.unsplash.com/photo-1521335629791-ce4aec67dd47") center/cover;
+  height: 100vh;
+  background: url("rendu2.jpg") no-repeat center center;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
   text-align: center;
 }
 
 .hero h1 {
-  font-size: 40px;
-  background: rgba(0,0,0,0.4);
-  padding: 20px;
-  border-radius: 10px;
+  font-size: 50px;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  padding: 25px;
+  border-radius: 12px;
 }
 
 /* SECTIONS */
@@ -124,7 +125,7 @@ footer {
 
 <!-- NAVIGATION -->
 <nav>
-  <div class="logo">Rune. </div>
+  <div class="logo">Rune.</div>
   <ul>
     <li onclick="show('home')">Accueil</li>
     <li onclick="show('shop')">Boutique</li>
@@ -135,7 +136,7 @@ footer {
 
 <!-- HERO -->
 <div class="hero" id="home">
-  <h1>Des bijoux faits main avec amour </h1>
+  <h1>Des bijoux faits main avec amour</h1>
 </div>
 
 <!-- BOUTIQUE -->
@@ -145,7 +146,7 @@ footer {
   <div class="produits">
 
     <div class="produit">
-      <img src="IMG_94482.JPG>
+      <img src="IMG_94482.JPG">
       <h3>Collier Lune</h3>
       <p class="prix">25€</p>
       <button onclick="commander()">Commander</button>
@@ -159,7 +160,7 @@ footer {
     </div>
 
     <div class="produit">
-      <img src="rendu2.jpg" alt="bijou" width="300">
+      <img src="rendu2.jpg">
       <h3>Bracelet Or</h3>
       <p class="prix">20€</p>
       <button onclick="commander()">Commander</button>
@@ -179,7 +180,7 @@ footer {
 <!-- CONTACT -->
 <section id="contact" class="contact">
   <h2>Contact</h2>
-  <p>Pour commander : clique sur un produit ou écris-moi </p>
+  <p>Pour commander : clique sur un produit ou écris-moi</p>
   <button onclick="commander()">Me contacter</button>
 </section>
 
@@ -189,7 +190,7 @@ footer {
 
 <script>
 function commander() {
-  window.location.href = "prune-berger@orange.fr";
+  window.location.href = "mailto:prune-berger@orange.fr";
 }
 
 function show(id) {
