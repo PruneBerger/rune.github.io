@@ -1,46 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-  <title>Mes bijoux</title>
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      background: #fafafa;
-    }
-    .produit {
-      border: 1px solid #ddd;
-      margin: 20px;
-      padding: 20px;
-      display: inline-block;
-    }
-    img {
-      width: 200px;
-    }
-    button {
-      background: black;
-      color: white;
-      padding: 10px;
-      border: none;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Mes Bijoux</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #ffffff;
+  color: #222;
+}
+
+header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 32px;
+  letter-spacing: 2px;
+}
+
+header p {
+  color: #777;
+}
+
+.produits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.produit {
+  width: 250px;
+  margin: 20px;
+  text-align: center;
+}
+
+.produit img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.produit h2 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.prix {
+  color: #bfa046;
+  font-weight: bold;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #444;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #aaa;
+  font-size: 14px;
+}
+</style>
+
 </head>
 
 <body>
 
-<h1>Mes Bijoux ✨</h1>
-<p>Bijoux faits main</p>
+<header>
+  <h1>✨ Mes Bijoux ✨</h1>
+  <p>Bijoux faits main avec amour</p>
+</header>
 
-<div class="produit">
-  <img src="https://via.placeholder.com/200">
-  <h2>Collier doré</h2>
-  <p>20€</p>
-  <button onclick="contacter()">Commander</button>
-</div>
+<section class="produits">
+
+  <div class="produit">
+    <img src="https://via.placeholder.com/300">
+    <h2>Collier doré</h2>
+    <p class="prix">20€</p>
+    <button onclick="commander()">Commander</button>
+  </div>
+
+  <div class="produit">
+    <img src="https://via.placeholder.com/300">
+    <h2>Bague élégante</h2>
+    <p class="prix">15€</p>
+    <button onclick="commander()">Commander</button>
+  </div>
+
+</section>
+
+<footer>
+  © 2026 - Mes Bijoux
+</footer>
 
 <script>
-function contacter() {
-  window.location.href = "mailto:prune-berger@orange.fr";
+function commander() {
+  window.location.href = "mailto:tonemail@gmail.com";
 }
 </script>
 
