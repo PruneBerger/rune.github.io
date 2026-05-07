@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rune. | Boutique de Bijoux</title>
+<title>Rune</title>
 
 <style>
 
@@ -14,181 +14,85 @@ body {
   color: #111;
 }
 
-/* NAVBAR */
+/* RETOUR */
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background: #0000ff;
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.logo {
-  font-size: 24px;
+.back {
+  padding: 20px;
   font-weight: bold;
-  letter-spacing: 2px;
+  cursor: pointer;
 }
 
-nav ul {
-  list-style: none;
+/* PRODUIT */
+
+.container {
   display: flex;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding: 50px;
+  justify-content: center;
 }
 
-nav ul li {
+.images {
+  flex: 1;
+  min-width: 300px;
+}
+
+.main-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* MINIATURES */
+
+.thumbnails {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.thumbnails img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
   cursor: pointer;
   transition: 0.3s;
 }
 
-nav ul li:hover {
-  color: #ddd;
+.thumbnails img:hover {
+  opacity: 0.7;
 }
 
-/* HERO */
-
-.hero {
-  height: 100vh;
-  background:
-    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-    url("IMG_94512.JPG") no-repeat center center;
-  background-size: cover;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.info {
+  flex: 1;
+  min-width: 300px;
 }
 
-.hero h1 {
-  color: white;
-  font-size: 55px;
-  padding: 20px;
-}
-
-/* SECTION */
-
-section {
-  padding: 70px 20px;
-  text-align: center;
-}
-
-h2 {
-  font-size: 40px;
-  margin-bottom: 40px;
-}
-
-/* PRODUITS */
-
-.produits {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
-
-.produit {
-  width: 320px;
-  background: white;
-  border-radius: 15px;
-  padding: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-  transition: 0.3s;
-}
-
-.produit:hover {
-  transform: translateY(-5px);
-}
-
-/* GALERIE */
-
-.galerie {
-  display: flex;
-  gap: 10px;
-}
-
-.galerie img {
-  width: 33%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-
-.galerie img:hover {
-  transform: scale(1.03);
-}
-
-.produit h3 {
-  margin-top: 20px;
-  font-size: 22px;
+h1 {
+  font-size: 45px;
 }
 
 .prix {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 28px;
   color: #0000ff;
+  font-weight: bold;
+  margin: 20px 0;
 }
-
-/* BOUTON */
 
 button {
   background: #0000ff;
   color: white;
   border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
+  padding: 15px 25px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: 0.3s;
-  margin-top: 10px;
+  font-size: 16px;
 }
 
 button:hover {
   background: black;
-}
-
-/* CONTACT */
-
-.contact {
-  background: #f5f5f5;
-}
-
-/* FOOTER */
-
-footer {
-  text-align: center;
-  padding: 30px;
-  color: #777;
-  font-size: 14px;
-}
-
-/* MOBILE */
-
-@media(max-width: 768px){
-
-  nav {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .hero h1 {
-    font-size: 38px;
-  }
-
-  .galerie {
-    flex-direction: column;
-  }
-
-  .galerie img {
-    width: 100%;
-  }
-
 }
 
 </style>
@@ -196,175 +100,69 @@ footer {
 
 <body>
 
-<!-- NAVBAR -->
+<div class="back" onclick="history.back()">
+← Retour
+</div>
 
-<nav>
+<div class="container">
 
-<div class="logo">Rune.</div>
+<!-- IMAGES -->
 
-<ul>
-<li onclick="show('home')">Accueil</li>
-<li onclick="show('shop')">Boutique</li>
-<li onclick="show('about')">À propos</li>
-<li onclick="show('contact')">Contact</li>
-</ul>
+<div class="images">
 
-</nav>
+<div class="main-image">
+<img id="product-image" src="rendu2.jpg">
+</div>
 
-<!-- HERO -->
+<div class="thumbnails">
 
-<div class="hero" id="home">
+<img src="rendu2.jpg"
+onclick="changeImage(this.src)">
+
+<img src="IMG_94512.JPG"
+onclick="changeImage(this.src)">
+
+<img src="IMG_6699.png"
+onclick="changeImage(this.src)">
+
+</div>
+
+</div>
+
+<!-- INFOS -->
+
+<div class="info">
 
 <h1>Rune</h1>
 
-</div>
-
-<!-- BOUTIQUE -->
-
-<section id="shop">
-
-<h2>Ma Boutique</h2>
-
-<div class="produits">
-
-<!-- PRODUIT 1 -->
-
-<div class="produit">
-
-<div class="galerie">
-<img src="IMG_94482.JPG">
-<img src="IMG_94482.JPG">
-<img src="IMG_94482.JPG">
-</div>
-
-<h3>The Lady Whispering</h3>
-
-<p class="prix">150€</p>
-
-<button onclick="window.location.href='produit-lady.html'">
-Voir le produit
-</button>
-
-</div>
-
-<!-- PRODUIT 2 -->
-
-<div class="produit">
-
-<div class="galerie">
-<img src="IMG_6699.png">
-<img src="IMG_6699.png">
-<img src="IMG_6699.png">
-</div>
-
-<h3>Bague pierre de vacances</h3>
-
 <p class="prix">110€</p>
 
-<button onclick="window.location.href='produit-bague.html'">
-Voir le produit
-</button>
-
-</div>
-
-<!-- PRODUIT 3 -->
-
-<div class="produit">
-
-<div class="galerie">
-<img src="rendu2.jpg">
-<img src="rendu2.jpg">
-<img src="rendu2.jpg">
-</div>
-
-<h3>Rune</h3>
-
-<p class="prix">110€</p>
-
-<button onclick="window.location.href='produit-rune.html'">
-Voir le produit
-</button>
-
-</div>
-
-<!-- PRODUIT 4 -->
-
-<div class="Bijou sur mesure">
-
-<div class="galerie">
-<img src="IMG_94512.JPG">
-<img src="IMG_94512.JPG">
-<img src="IMG_94512.JPG">
-</div>
-
-<h3>Éclipse</h3>
-
-<p class="prix">130€</p>
-
-<button onclick="window.location.href='produit-eclipse.html'">
-Voir le produit
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- À PROPOS -->
-
-<section id="about">
-
-<h2>À propos</h2>
-
 <p>
-Je crée des bijoux faits main uniques,
-inspirés par la nature, les symboles anciens
-et l’élégance.
+Bijou fait main inspiré des symboles anciens,
+de la lune et de l’élégance naturelle.
+Chaque pièce est unique.
 </p>
 
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact" class="contact">
-
-<h2>Contact</h2>
-
-<p>
-Pour toute commande ou question,
-écris-moi directement.
-</p>
-
-<button onclick="contact()">
-Me contacter
+<button onclick="commander()">
+Commander
 </button>
 
-</section>
+</div>
 
-<!-- FOOTER -->
-
-<footer>
-
-© 2026 Rune. — Tous droits réservés
-
-</footer>
+</div>
 
 <script>
 
-function contact() {
+function changeImage(image) {
 
-window.location.href =
-"mailto:prune-berger@orange.fr";
+document.getElementById("product-image").src = image;
 
 }
 
-function show(id) {
+function commander() {
 
-document.getElementById(id)
-.scrollIntoView({
-behavior: "smooth"
-});
+window.location.href =
+"mailto:prune-berger@orange.fr?subject=Commande Rune";
 
 }
 
