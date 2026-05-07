@@ -3,22 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rune</title>
+<title>Rune | Produit</title>
 
 <style>
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background: white;
-  color: #111;
+  color: black;
+  letter-spacing: 0.5px;
 }
 
-/* RETOUR */
+/* NAVBAR */
 
-.back {
-  padding: 20px;
-  font-weight: bold;
+nav {
+  padding: 25px 40px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   cursor: pointer;
 }
 
@@ -27,72 +33,109 @@ body {
 .container {
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
-  padding: 50px;
-  justify-content: center;
+  gap: 80px;
+  padding: 60px;
+  align-items: flex-start;
 }
+
+/* IMAGES */
 
 .images {
   flex: 1;
-  min-width: 300px;
+  min-width: 320px;
 }
 
 .main-image img {
   width: 100%;
-  height: 500px;
+  height: 700px;
   object-fit: cover;
-  border-radius: 12px;
 }
 
 /* MINIATURES */
 
 .thumbnails {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   margin-top: 15px;
 }
 
 .thumbnails img {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 140px;
   object-fit: cover;
-  border-radius: 10px;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .thumbnails img:hover {
-  opacity: 0.7;
+  opacity: 0.6;
 }
+
+/* INFOS */
 
 .info {
   flex: 1;
   min-width: 300px;
+  padding-top: 30px;
 }
 
-h1 {
-  font-size: 45px;
+.info h1 {
+  font-size: 28px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .prix {
-  font-size: 28px;
-  color: #0000ff;
-  font-weight: bold;
-  margin: 20px 0;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #666;
 }
 
+.description {
+  margin-top: 40px;
+  line-height: 1.8;
+  color: #444;
+  font-size: 14px;
+  max-width: 450px;
+}
+
+/* BOUTON */
+
 button {
-  background: #0000ff;
+  margin-top: 40px;
+  background: black;
   color: white;
   border: none;
-  padding: 15px 25px;
-  border-radius: 10px;
+  padding: 15px 35px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: 0.3s;
 }
 
 button:hover {
-  background: black;
+  opacity: 0.7;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.container {
+  padding: 30px;
+  gap: 40px;
+}
+
+.main-image img {
+  height: 500px;
+}
+
+.info {
+  padding-top: 0;
+}
+
 }
 
 </style>
@@ -100,9 +143,13 @@ button:hover {
 
 <body>
 
-<div class="back" onclick="history.back()">
+<!-- NAV -->
+
+<nav onclick="history.back()">
 ← Retour
-</div>
+</nav>
+
+<!-- PRODUIT -->
 
 <div class="container">
 
@@ -137,10 +184,16 @@ onclick="changeImage(this.src)">
 
 <p class="prix">110€</p>
 
-<p>
-Bijou fait main inspiré des symboles anciens,
-de la lune et de l’élégance naturelle.
-Chaque pièce est unique.
+<p class="description">
+
+Bijou artisanal fait main inspiré
+des symboles anciens, de la lune
+et de l’élégance minimaliste.
+
+Chaque pièce est unique et réalisée
+avec soin dans une approche
+artistique et intemporelle.
+
 </p>
 
 <button onclick="commander()">
