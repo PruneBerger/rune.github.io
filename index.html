@@ -2,28 +2,34 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Ma Boutique de Bijoux</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rune. | Boutique de Bijoux</title>
 
 <style>
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #fff;
-  color: #0000ff;
+  background: white;
+  color: #111;
 }
 
 /* NAVBAR */
+
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 15px 30px;
+  align-items: center;
+  padding: 20px 40px;
   background: #0000ff;
   color: white;
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
 
-nav .logo {
+.logo {
+  font-size: 24px;
   font-weight: bold;
   letter-spacing: 2px;
 }
@@ -31,26 +37,29 @@ nav .logo {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 25px;
   margin: 0;
   padding: 0;
 }
 
 nav ul li {
   cursor: pointer;
-  color: white;
+  transition: 0.3s;
 }
 
 nav ul li:hover {
   color: #ddd;
 }
 
-/* BANNIÈRE */
+/* HERO */
+
 .hero {
   height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-              url("IMG_94512.JPG") no-repeat center center;
+  background:
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url("IMG_94512.JPG") no-repeat center center;
   background-size: cover;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,158 +67,262 @@ nav ul li:hover {
 }
 
 .hero h1 {
-  font-size: 50px;
   color: white;
-  padding: 25px;
-  border-radius: 12px;
+  font-size: 55px;
+  padding: 20px;
 }
 
-/* SECTIONS */
+/* SECTION */
+
 section {
-  padding: 50px 20px;
+  padding: 70px 20px;
   text-align: center;
 }
 
+h2 {
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
 /* PRODUITS */
+
 .produits {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 30px;
 }
 
 .produit {
-  width: 250px;
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 280px;
+  transition: 0.3s;
+}
+
+.produit:hover {
+  transform: translateY(-5px);
 }
 
 .produit img {
   width: 100%;
-  height: 300px;
+  height: 320px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
   transition: transform 0.3s ease;
 }
 
 .produit img:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
+}
+
+.produit h3 {
+  margin-top: 15px;
+  font-size: 22px;
 }
 
 .prix {
-  color: #0000ff;
+  font-size: 20px;
   font-weight: bold;
+  color: #0000ff;
 }
 
 /* BOUTON */
+
 button {
   background: #0000ff;
   color: white;
   border: none;
-  padding: 10px;
-  margin-top: 10px;
+  padding: 12px 20px;
+  border-radius: 8px;
   cursor: pointer;
-  border-radius: 5px;
+  transition: 0.3s;
+  margin-top: 10px;
 }
 
 button:hover {
-  background: #333;
+  background: black;
 }
 
 /* CONTACT */
+
 .contact {
   background: #f5f5f5;
 }
 
+/* FOOTER */
+
 footer {
   text-align: center;
-  padding: 20px;
-  font-size: 12px;
-  color: #888;
+  padding: 30px;
+  color: #777;
+  font-size: 14px;
 }
+
+/* MOBILE */
+
+@media(max-width: 768px){
+
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- NAVBAR -->
+
 <nav>
-  <div class="logo">Rune.</div>
-  <ul>
-    <li onclick="show('home')">Accueil</li>
-    <li onclick="show('shop')">Boutique</li>
-    <li onclick="show('about')">À propos</li>
-    <li onclick="show('contact')">Contact</li>
-  </ul>
+
+<div class="logo">Rune.</div>
+
+<ul>
+<li onclick="show('home')">Accueil</li>
+<li onclick="show('shop')">Boutique</li>
+<li onclick="show('about')">À propos</li>
+<li onclick="show('contact')">Contact</li>
+</ul>
+
 </nav>
 
 <!-- HERO -->
+
 <div class="hero" id="home">
-  <h1>Rune.</h1>
+
+<h1>Des bijoux faits main avec amour</h1>
+
 </div>
 
 <!-- BOUTIQUE -->
+
 <section id="shop">
-  <h2>Ma Boutique</h2>
 
-  <div class="produits">
+<h2>Ma Boutique</h2>
 
-    <div class="produit">
-      <img src="IMG_94482.JPG">
-      <h3>The Lady Whispering</h3>
-      <p class="prix">150€</p>
-      <button onclick="commander()">Commander</button>
-    </div>
+<div class="produits">
 
-    <div class="produit">
-      <a href="produit-LadyWhispering.html">
-  <img src="rendu2.jpg">
+<!-- PRODUIT 1 -->
+
+<div class="produit">
+
+<a href="produit-lady.html">
+<img src="IMG_94482.JPG">
 </a>
-      <h3>Bague pierre de vacances</h3>
-      <p class="prix">110€</p>
-      <button onclick="commander()">Commander</button>
-    </div>
 
-    <div class="produit">
-      <a href="produit-rune.html">
-  <img src="rendu2.jpg">
+<h3>The Lady Whispering</h3>
+
+<p class="prix">150€</p>
+
+<button onclick="window.location.href='produit-lady.html'">
+Voir le produit
+</button>
+
+</div>
+
+<!-- PRODUIT 2 -->
+
+<div class="produit">
+
+<a href="produit-bague.html">
+<img src="IMG_6699.png">
 </a>
-      <h3>Rune</h3>
-      <p class="prix">110€</p>
-      <button onclick="commander()">Commander</button>
-    </div>
 
-  </div>
+<h3>Bague pierre de vacances</h3>
+
+<p class="prix">110€</p>
+
+<button onclick="window.location.href='produit-bague.html'">
+Voir le produit
+</button>
+
+</div>
+
+<!-- PRODUIT 3 -->
+
+<div class="produit">
+
+<a href="produit-rune.html">
+<img src="rendu2.jpg">
+</a>
+
+<h3>Rune</h3>
+
+<p class="prix">110€</p>
+
+<button onclick="window.location.href='produit-rune.html'">
+Voir le produit
+</button>
+
+</div>
+
+</div>
+
 </section>
 
 <!-- À PROPOS -->
+
 <section id="about">
-  <h2>À propos</h2>
-  <p>
-    Je crée des bijoux faits main uniques, inspirés par la nature et l’élégance.
-  </p>
+
+<h2>À propos</h2>
+
+<p>
+Je crée des bijoux faits main uniques,
+inspirés par la nature, les symboles anciens
+et l’élégance.
+</p>
+
 </section>
 
 <!-- CONTACT -->
+
 <section id="contact" class="contact">
-  <h2>Contact</h2>
-  <p>Pour commander : clique sur un produit ou écris-moi</p>
-  <button onclick="commander()">Me contacter</button>
+
+<h2>Contact</h2>
+
+<p>
+Pour toute commande ou question,
+écris-moi directement.
+</p>
+
+<button onclick="contact()">
+Me contacter
+</button>
+
 </section>
 
+<!-- FOOTER -->
+
 <footer>
-  © 2026 - Ma Boutique de Bijoux
+
+© 2026 Rune. — Tous droits réservés
+
 </footer>
 
 <script>
-function commander() {
-  window.location.href = "mailto:prune-berger@orange.fr";
+
+function contact() {
+
+window.location.href =
+"mailto:prune-berger@orange.fr";
+
 }
 
 function show(id) {
-  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+
+document.getElementById(id)
+.scrollIntoView({
+behavior: "smooth"
+});
+
 }
+
 </script>
 
 </body>
