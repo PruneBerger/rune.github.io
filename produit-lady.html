@@ -2,92 +2,213 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>The Lady Whispering</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rune | Produit</title>
 
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background: white;
-  color: #111;
+  color: black;
+  letter-spacing: 0.5px;
 }
 
+/* NAV */
+
 nav {
-  padding: 20px;
-  font-weight: bold;
+  padding: 25px 40px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   cursor: pointer;
 }
+
+/* LAYOUT */
 
 .container {
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
-  padding: 50px;
-  justify-content: center;
+  gap: 80px;
+  padding: 60px;
+  align-items: flex-start;
 }
 
-.image, .info {
+/* IMAGES */
+
+.images {
+  flex: 1;
+  min-width: 320px;
+}
+
+.main-image img {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.thumbnails img {
+  width: 110px;
+  height: 140px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.thumbnails img:hover {
+  opacity: 0.6;
+}
+
+/* INFO */
+
+.info {
   flex: 1;
   min-width: 300px;
+  padding-top: 30px;
 }
 
-.image img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-h1 {
-  font-size: 40px;
+.info h1 {
+  font-size: 28px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .prix {
-  font-size: 25px;
-  margin: 20px 0;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #666;
 }
 
+.description {
+  margin-top: 40px;
+  line-height: 1.8;
+  color: #444;
+  font-size: 14px;
+  max-width: 450px;
+}
+
+/* BUTTON */
+
 button {
+  margin-top: 40px;
   background: black;
   color: white;
   border: none;
-  padding: 15px 25px;
+  padding: 15px 35px;
   cursor: pointer;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: 0.3s;
 }
 
 button:hover {
-  background: #444;
+  opacity: 0.7;
 }
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.container {
+  padding: 30px;
+  gap: 40px;
+}
+
+.main-image img {
+  height: 500px;
+}
+
+.info {
+  padding-top: 0;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<nav onclick="history.back()">← Retour</nav>
+<!-- NAV -->
+
+<nav onclick="history.back()">
+← Retour
+</nav>
+
+<!-- PRODUIT -->
 
 <div class="container">
 
-<div class="image">
-<img src="IMG_94482.JPG">
+<!-- IMAGES -->
+
+<div class="images">
+
+<div class="main-image">
+<img id="product-image" src="IMG_9448 2">
 </div>
 
-<div class="info">
-<h1>The Lady Whispering</h1>
-<p class="prix">150€</p>
+<div class="thumbnails">
 
-<p>
-Bijou artisanal unique inspiré des murmures anciens et de l’élégance féminine.
+<img src="IMG_9448 2.JPG" onclick="changeImage(this.src)">
+<img src="IMG_9450 2.JPG" onclick="changeImage(this.src)">
+<img src="IMG_9449 2.JPG" onclick="changeImage(this.src)">
+<img src="IMG_9451 2.JPG" onclick="changeImage(this.src)">
+
+</div>
+
+</div>
+
+<!-- INFOS -->
+
+<div class="info">
+
+<h1>Rune</h1>
+
+<p class="prix">110€</p>
+
+<p class="description">
+
+Rune est une création artisanale inspirée
+des symboles anciens et de l’univers mystique.
+
+Un bijou minimaliste, élégant et intemporel,
+pensé pour être porté au quotidien.
+
+Chaque pièce est réalisée à la main avec soin.
+
 </p>
 
-<button onclick="commander()">Commander</button>
+<button onclick="commander()">
+Commander
+</button>
 
 </div>
 
 </div>
 
 <script>
+
+function changeImage(image) {
+document.getElementById("product-image").src = image;
+}
+
 function commander() {
 window.location.href =
-"mailto:prune-berger@orange.fr?subject=Commande The Lady Whispering";
+"mailto:prune-berger@orange.fr?subject=Commande Rune&body=Bonjour, je souhaite commander le bijou Rune.";
 }
+
 </script>
 
 </body>
