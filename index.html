@@ -125,21 +125,17 @@ h2 {
   color: #0000ff;
 }
 
-/* BOUTON */
+/* LIEN PRODUIT */
 
-button {
-  background: #0000ff;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
-  cursor: pointer;
+.produit a {
+  text-decoration: none;
+  color: #0000ff;
+  font-weight: bold;
   transition: 0.3s;
-  margin-top: 10px;
 }
 
-button:hover {
-  background: black;
+.produit a:hover {
+  color: black;
 }
 
 /* CONTACT */
@@ -220,9 +216,9 @@ footer {
 
 <p class="prix">150€</p>
 
-<button onclick="window.location.href='produit-lady.html'">
+<a href="produit-lady.html">
 Voir le produit
-</button>
+</a>
 
 </div>
 
@@ -238,9 +234,9 @@ Voir le produit
 
 <p class="prix">110€</p>
 
-<button onclick="window.location.href='produit-bague.html'">
+<a href="produit-bague.html">
 Voir le produit
-</button>
+</a>
 
 </div>
 
@@ -256,31 +252,27 @@ Voir le produit
 
 <p class="prix">110€</p>
 
-<button onclick="window.location.href='produit-rune.html'">
+<a href="produit-rune.html">
 Voir le produit
-</button>
+</a>
 
 </div>
-
-</div>
-
-</section>
 
 <!-- PRODUIT 4 -->
 
 <div class="produit">
 
 <a href="produit-surmesure.html">
-<img src="rendu2.jpg">
+<img src="IMG_94512.JPG">
 </a>
 
 <h3>Bijoux sur mesure</h3>
 
 <p class="prix">200€</p>
 
-<button onclick="window.location.href='produit-surmesure.html'">
+<a href="produit-surmesure.html">
 Voir le produit
-</button>
+</a>
 
 </div>
 
@@ -313,9 +305,9 @@ Pour toute commande ou question,
 écris-moi directement.
 </p>
 
-<button onclick="contact()">
-Me contacter
-</button>
+<p>
+prune-berger@orange.fr
+</p>
 
 </section>
 
@@ -328,13 +320,6 @@ Me contacter
 </footer>
 
 <script>
-
-function contact() {
-
-window.location.href =
-"mailto:prune-berger@orange.fr";
-
-}
 
 function show(id) {
 
