@@ -94,7 +94,11 @@ h2 {
 }
 
 .produit {
-  width: 280px;
+  width: 320px;
+  background: white;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
   transition: 0.3s;
 }
 
@@ -102,20 +106,27 @@ h2 {
   transform: translateY(-5px);
 }
 
-.produit img {
-  width: 100%;
-  height: 320px;
+/* GALERIE */
+
+.galerie {
+  display: flex;
+  gap: 10px;
+}
+
+.galerie img {
+  width: 33%;
+  height: 220px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 10px;
   transition: transform 0.3s ease;
 }
 
-.produit img:hover {
+.galerie img:hover {
   transform: scale(1.03);
 }
 
 .produit h3 {
-  margin-top: 15px;
+  margin-top: 20px;
   font-size: 22px;
 }
 
@@ -170,6 +181,14 @@ footer {
     font-size: 38px;
   }
 
+  .galerie {
+    flex-direction: column;
+  }
+
+  .galerie img {
+    width: 100%;
+  }
+
 }
 
 </style>
@@ -212,9 +231,11 @@ footer {
 
 <div class="produit">
 
-<a href="produit-lady.html">
+<div class="galerie">
 <img src="IMG_94482.JPG">
-</a>
+<img src="IMG_94482.JPG">
+<img src="IMG_94482.JPG">
+</div>
 
 <h3>The Lady Whispering</h3>
 
@@ -230,9 +251,11 @@ Voir le produit
 
 <div class="produit">
 
-<a href="produit-bague.html">
+<div class="galerie">
 <img src="IMG_6699.png">
-</a>
+<img src="IMG_6699.png">
+<img src="IMG_6699.png">
+</div>
 
 <h3>Bague pierre de vacances</h3>
 
@@ -248,15 +271,37 @@ Voir le produit
 
 <div class="produit">
 
-<a href="produit-rune.html">
+<div class="galerie">
 <img src="rendu2.jpg">
-</a>
+<img src="rendu2.jpg">
+<img src="rendu2.jpg">
+</div>
 
 <h3>Rune</h3>
 
 <p class="prix">110€</p>
 
 <button onclick="window.location.href='produit-rune.html'">
+Voir le produit
+</button>
+
+</div>
+
+<!-- PRODUIT 4 -->
+
+<div class="produit">
+
+<div class="galerie">
+<img src="IMG_94512.JPG">
+<img src="IMG_94512.JPG">
+<img src="IMG_94512.JPG">
+</div>
+
+<h3>Éclipse</h3>
+
+<p class="prix">130€</p>
+
+<button onclick="window.location.href='produit-eclipse.html'">
 Voir le produit
 </button>
 
