@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Bague pierre de vacances</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: white;
+  color: #111;
+}
+
+nav {
+  padding: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding: 50px;
+  justify-content: center;
+}
+
+.image, .info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.prix {
+  font-size: 25px;
+  margin: 20px 0;
+}
+
+button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #444;
+}
+</style>
+</head>
+
+<body>
+
+<nav onclick="history.back()">← Retour</nav>
+
+<div class="container">
+
+<div class="image">
+<img src="IMG_6699.png">
+</div>
+
+<div class="info">
+<h1>Bague pierre de vacances</h1>
+<p class="prix">110€</p>
+
+<p>
+Une bague lumineuse inspirée des souvenirs d’été et des pierres naturelles.
+</p>
+
+<button onclick="commander()">Commander</button>
+
+</div>
+
+</div>
+
+<script>
+function commander() {
+window.location.href =
+"mailto:prune-berger@orange.fr?subject=Commande Bague pierre de vacances";
+}
+</script>
+
+</body>
+</html>
