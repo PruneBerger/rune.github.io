@@ -7,11 +7,14 @@
 
 <style>
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background: white;
-  color: #111;
+  color: black;
+  letter-spacing: 0.5px;
 }
 
 /* NAVBAR */
@@ -20,24 +23,26 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  background: #0000ff;
-  color: white;
+  padding: 25px 40px;
+  background: white;
+  color: black;
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 1px solid #eee;
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: bold;
-  letter-spacing: 2px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 30px;
   margin: 0;
   padding: 0;
 }
@@ -45,10 +50,12 @@ nav ul {
 nav ul li {
   cursor: pointer;
   transition: 0.3s;
+  font-size: 14px;
+  text-transform: uppercase;
 }
 
 nav ul li:hover {
-  color: #ddd;
+  opacity: 0.5;
 }
 
 /* HERO */
@@ -56,8 +63,9 @@ nav ul li:hover {
 .hero {
   height: 100vh;
   background:
-    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-    url("IMG_94512.JPG") no-repeat center center;
+  linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)),
+  url("IMG_94512.JPG") no-repeat center center;
+
   background-size: cover;
 
   display: flex;
@@ -68,102 +76,102 @@ nav ul li:hover {
 
 .hero h1 {
   color: white;
-  font-size: 55px;
-  padding: 20px;
+  font-size: 70px;
+  font-weight: 300;
+  letter-spacing: 8px;
+  text-transform: uppercase;
 }
 
 /* SECTION */
 
 section {
-  padding: 70px 20px;
+  padding: 90px 40px;
   text-align: center;
 }
 
 h2 {
-  font-size: 40px;
-  margin-bottom: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 60px;
 }
 
 /* PRODUITS */
 
 .produits {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
 }
 
 .produit {
-  width: 280px;
   transition: 0.3s;
-}
-
-.produit:hover {
-  transform: translateY(-5px);
 }
 
 .produit img {
   width: 100%;
-  height: 320px;
+  height: 420px;
   object-fit: cover;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
+  transition: 0.4s ease;
 }
 
 .produit img:hover {
-  transform: scale(1.03);
+  opacity: 0.9;
 }
 
 .produit h3 {
-  margin-top: 15px;
-  font-size: 22px;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .prix {
-  font-size: 20px;
-  font-weight: bold;
-  color: #0000ff;
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
 }
 
-/* LIEN PRODUIT */
+/* LIENS */
 
 .produit a {
   text-decoration: none;
-  color: #0000ff;
-  font-weight: bold;
-  transition: 0.3s;
+  color: black;
 }
 
 .produit a:hover {
-  color: black;
+  opacity: 0.6;
 }
 
 /* CONTACT */
 
 .contact {
-  background: #f5f5f5;
+  background: #fafafa;
 }
 
 /* FOOTER */
 
 footer {
   text-align: center;
-  padding: 30px;
-  color: #777;
-  font-size: 14px;
+  padding: 40px;
+  color: #888;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
 
 /* MOBILE */
 
-@media(max-width: 768px){
+@media(max-width:768px){
 
   nav {
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
   }
 
   .hero h1 {
-    font-size: 38px;
+    font-size: 42px;
   }
 
 }
@@ -192,7 +200,7 @@ footer {
 
 <div class="hero" id="home">
 
-<h1>Rune.</h1>
+<h1>Rune Studio</h1>
 
 </div>
 
@@ -200,7 +208,7 @@ footer {
 
 <section id="shop">
 
-<h2>Ma Boutique</h2>
+<h2>Collection</h2>
 
 <div class="produits">
 
@@ -315,7 +323,7 @@ prune-berger@orange.fr
 
 <footer>
 
-© 2026 Rune. — Tous droits réservés
+© 2026 Rune Studio — Tous droits réservés
 
 </footer>
 
