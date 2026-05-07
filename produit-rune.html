@@ -17,7 +17,7 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* NAVBAR */
+/* NAV */
 
 nav {
   padding: 25px 40px;
@@ -28,7 +28,7 @@ nav {
   cursor: pointer;
 }
 
-/* PRODUIT */
+/* LAYOUT */
 
 .container {
   display: flex;
@@ -51,8 +51,6 @@ nav {
   object-fit: cover;
 }
 
-/* MINIATURES */
-
 .thumbnails {
   display: flex;
   gap: 15px;
@@ -71,7 +69,7 @@ nav {
   opacity: 0.6;
 }
 
-/* INFOS */
+/* INFO */
 
 .info {
   flex: 1;
@@ -100,7 +98,7 @@ nav {
   max-width: 450px;
 }
 
-/* BOUTON */
+/* BUTTON */
 
 button {
   margin-top: 40px;
@@ -163,14 +161,9 @@ button:hover {
 
 <div class="thumbnails">
 
-<img src="rendu2.jpg"
-onclick="changeImage(this.src)">
-
-<img src="IMG_94512.JPG"
-onclick="changeImage(this.src)">
-
-<img src="IMG_6699.png"
-onclick="changeImage(this.src)">
+<img src="rendu2.jpg" onclick="changeImage(this.src)">
+<img src="IMG_94512.JPG" onclick="changeImage(this.src)">
+<img src="IMG_6699.png" onclick="changeImage(this.src)">
 
 </div>
 
@@ -186,13 +179,13 @@ onclick="changeImage(this.src)">
 
 <p class="description">
 
-Bijou artisanal fait main inspiré
-des symboles anciens, de la lune
-et de l’élégance minimaliste.
+Rune est une création artisanale inspirée
+des symboles anciens et de l’univers mystique.
 
-Chaque pièce est unique et réalisée
-avec soin dans une approche
-artistique et intemporelle.
+Un bijou minimaliste, élégant et intemporel,
+pensé pour être porté au quotidien.
+
+Chaque pièce est réalisée à la main avec soin.
 
 </p>
 
@@ -207,16 +200,12 @@ Commander
 <script>
 
 function changeImage(image) {
-
 document.getElementById("product-image").src = image;
-
 }
 
 function commander() {
-
 window.location.href =
-"mailto:prune-berger@orange.fr?subject=Commande Rune";
-
+"mailto:prune-berger@orange.fr?subject=Commande Rune&body=Bonjour, je souhaite commander le bijou Rune.";
 }
 
 </script>
