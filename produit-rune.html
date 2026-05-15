@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rune | Produit</title>
+<title>Rune | Rune Studio</title>
 
 <style>
 
@@ -17,24 +17,54 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* NAV */
+/* NAVBAR */
 
 nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 25px 40px;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   border-bottom: 1px solid #eee;
-  font-size: 14px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  letter-spacing: 2px;
   cursor: pointer;
 }
 
-/* LAYOUT */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+nav ul li:hover {
+  opacity: 0.5;
+}
+
+/* PRODUIT */
 
 .container {
   display: flex;
   flex-wrap: wrap;
   gap: 80px;
-  padding: 60px;
+  padding: 80px 40px;
   align-items: flex-start;
 }
 
@@ -47,7 +77,7 @@ nav {
 
 .main-image img {
   width: 100%;
-  height: 700px;
+  height: 720px;
   object-fit: cover;
 }
 
@@ -66,73 +96,138 @@ nav {
 }
 
 .thumbnails img:hover {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
-/* INFO */
+/* INFOS */
 
 .info {
   flex: 1;
-  min-width: 300px;
-  padding-top: 30px;
+  min-width: 320px;
+  padding-top: 40px;
+  max-width: 480px;
 }
 
 .info h1 {
   font-size: 28px;
   font-weight: 500;
-  text-transform: uppercase;
   letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #777;
+  text-transform: uppercase;
 }
 
 .prix {
-  margin-top: 20px;
-  font-size: 18px;
-  color: #666;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #777;
+  letter-spacing: 1px;
 }
 
 .description {
   margin-top: 40px;
-  line-height: 1.8;
+  line-height: 1.9;
   color: #444;
   font-size: 14px;
-  max-width: 450px;
 }
 
-/* BUTTON */
+/* BOUTON PREMIUM */
 
 button {
-  margin-top: 40px;
-  background: black;
-  color: white;
-  border: none;
-  padding: 15px 35px;
+  margin-top: 45px;
+  background: transparent;
+  color: black;
+  border: 1px solid black;
+  padding: 14px 32px;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 2px;
   text-transform: uppercase;
   transition: 0.3s;
 }
 
 button:hover {
-  opacity: 0.7;
+  background: black;
+  color: white;
+}
+
+/* SECTION */
+
+section {
+  padding: 90px 40px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+}
+
+/* CONTACT */
+
+.contact {
+  background: #fafafa;
+}
+
+.contact p {
+  font-size: 14px;
+  color: #333;
+}
+
+.contact a {
+  text-decoration: none;
+  color: black;
+}
+
+.contact a:hover {
+  opacity: 0.6;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #888;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
 
 /* MOBILE */
 
 @media(max-width:768px){
 
-.container {
-  padding: 30px;
-  gap: 40px;
-}
+  nav {
+    flex-direction: column;
+    gap: 20px;
+  }
 
-.main-image img {
-  height: 500px;
-}
+  .container {
+    padding: 40px 30px;
+    gap: 40px;
+  }
 
-.info {
-  padding-top: 0;
-}
+  .main-image img {
+    height: 500px;
+  }
+
+  .thumbnails img {
+    width: 80px;
+    height: 100px;
+  }
+
+  .info {
+    padding-top: 0;
+  }
 
 }
 
@@ -141,52 +236,59 @@ button:hover {
 
 <body>
 
-<!-- NAV -->
+<!-- NAVBAR -->
 
-<nav onclick="history.back()">
-← Retour
+<nav>
+
+<div class="logo" onclick="window.location.href='index.html'">
+Rune.
+</div>
+
+<ul>
+<li onclick="show('product')">Produit</li>
+<li onclick="show('about')">À propos</li>
+<li onclick="show('contact')">Contact</li>
+</ul>
+
 </nav>
 
 <!-- PRODUIT -->
 
-<div class="container">
-
-<!-- IMAGES -->
+<div class="container" id="product">
 
 <div class="images">
 
 <div class="main-image">
-<img id="product-image" src="rendu2.jpg">
+<img id="product-image" src="rendu2.jpg" alt="Rune">
 </div>
 
 <div class="thumbnails">
-
 <img src="rendu2.jpg" onclick="changeImage(this.src)">
 <img src="IMG_94512.JPG" onclick="changeImage(this.src)">
 <img src="IMG_6699.png" onclick="changeImage(this.src)">
-
 </div>
 
 </div>
-
-<!-- INFOS -->
 
 <div class="info">
 
 <h1>Rune</h1>
 
+<p class="subtitle">
+ARGENT 925 • PIÈCE UNIQUE
+</p>
+
 <p class="prix">110€</p>
 
 <p class="description">
-
 Rune est une création artisanale inspirée
-des symboles anciens et de l’univers mystique.
-
+des symboles anciens et d’un univers mystique.
+<br><br>
 Un bijou minimaliste, élégant et intemporel,
-pensé pour être porté au quotidien.
-
-Chaque pièce est réalisée à la main avec soin.
-
+pensé pour accompagner le quotidien comme un objet de mémoire.
+<br><br>
+Chaque pièce est réalisée à la main avec soin,
+en argent 925.
 </p>
 
 <button onclick="commander()">
@@ -197,15 +299,68 @@ Commander
 
 </div>
 
+<!-- À PROPOS -->
+
+<section id="about">
+
+<h2>À propos</h2>
+
+<p>
+Bijoux réalisés à la main,<br>
+gardiens de souvenirs.<br><br>
+Argent 925 uniquement.
+</p>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+<h2>Contact</h2>
+
+<p>
+Pour toute commande ou question,
+écris-moi directement.
+</p>
+
+<p>
+<a href="mailto:prune-berger@orange.fr">
+prune-berger@orange.fr
+</a>
+</p>
+
+<p>
+Instagram :
+<a href="https://instagram.com/pruneberger" target="_blank">
+@pruneberger
+</a>
+</p>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+© 2026 Rune Studio — Tous droits réservés
+</footer>
+
 <script>
 
-function changeImage(image) {
-document.getElementById("product-image").src = image;
+function changeImage(image){
+  document.getElementById("product-image").src = image;
 }
 
-function commander() {
-window.location.href =
-"mailto:prune-berger@orange.fr?subject=Commande Rune&body=Bonjour, je souhaite commander le bijou Rune.";
+function commander(){
+  window.location.href =
+  "mailto:prune-berger@orange.fr?subject=Commande Rune&body=Bonjour, je souhaite commander le bijou Rune.";
+}
+
+function show(id){
+  document.getElementById(id)
+  .scrollIntoView({
+    behavior: "smooth"
+  });
 }
 
 </script>
