@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Pierres de vacances | Produit</title>
 
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
 
 body {
@@ -117,25 +116,72 @@ button:hover {
   opacity: 0.7;
 }
 
+/* ABOUT + CONTACT */
+
+section {
+  padding: 80px 60px;
+  border-top: 1px solid #eee;
+}
+
+section h2 {
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+section p {
+  line-height: 1.8;
+  color: #444;
+  max-width: 500px;
+}
+
+.contact a {
+  color: black;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  opacity: 0.6;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 40px;
+  text-align: center;
+  border-top: 1px solid #eee;
+  font-size: 13px;
+  color: #777;
+}
+
 /* MOBILE */
 
 @media(max-width:768px){
 
-.container {
-  padding: 30px;
-  gap: 40px;
-}
+  .container {
+    padding: 30px;
+    gap: 40px;
+  }
 
-.main-image img {
-  height: 500px;
-}
+  .main-image img {
+    height: 500px;
+  }
 
-.info {
-  padding-top: 0;
-}
+  .info {
+    padding-top: 0;
+  }
+
+  .thumbnails img {
+    width: 80px;
+    height: 100px;
+  }
+
+  section {
+    padding: 50px 30px;
+  }
 
 }
-
 </style>
 </head>
 
@@ -151,77 +197,56 @@ button:hover {
 
 <div class="container">
 
-<!-- IMAGES -->
+  <!-- IMAGES -->
 
-<div class="images">
+  <div class="images">
 
-<div class="main-image">
-<img id="product-image" src="IMG_6699.png">
-</div>
+    <div class="main-image">
+      <img id="product-image" src="IMG_6699.png" alt="Pierre de vacances">
+    </div>
 
-<div class="thumbnails">
+    <div class="thumbnails">
+      <img src="IMG_6699.png" onclick="changeImage(this.src)">
+      <img src="IMG_3372.png" onclick="changeImage(this.src)">
+      <img src="IMG_6699.png" onclick="changeImage(this.src)">
+    </div>
 
-<img src="IMG_6699.png" onclick="changeImage(this.src)">
-<img src="IMG_3372.png" onclick="changeImage(this.src)">
-<img src="IMG_6699.png" onclick="changeImage(this.src)">
+  </div>
 
-</div>
+  <!-- INFOS -->
 
-</div>
+  <div class="info">
 
-<!-- INFOS -->
+    <h1>Pierre de vacances</h1>
 
-<div class="info">
+    <p class="prix">110€</p>
 
-<h1>Pierre de vacances</h1>
+    <p class="description">
+      En souvenir d'un voyage, une balade, un moment de vie important,
+      elle marquera d'une pierre vos instants les plus chers.
+      <br><br>
+      Chaque pièce est réalisée à la main.
+    </p>
 
-<p class="prix">110€</p>
+    <button onclick="commander()">
+      Commander
+    </button>
 
-<p class="description">
-
-En souvenir d'un voyage, une balade, un moment de vie important, 
-elle marquera d'une pierre, vos instants les plus chers.  
-
-Chaque pièce est réalisée à la main.
-
-</p>
-
-<button onclick="commander()">
-Commander
-</button>
+  </div>
 
 </div>
-
-</div>
-
-<script>
-
-function changeImage(image) {
-document.getElementById("product-image").src = image;
-}
-
-function commander() {
-window.location.href =
-"mailto:prune-berger@orange.fr?subject=Commande Rune&body=Bonjour, je souhaite commander le bijou Pierre de vacances.";
-}
-
-</div>
-
-</div>
-
-</section>
 
 <!-- À PROPOS -->
 
 <section id="about">
 
-<h2>À propos</h2>
+  <h2>À propos</h2>
 
-<p>
-Bijoux réalisés à la main,<br>
-gardiens de souvenirs.<br><br>
-Argent 925 uniquement.
-</p>
+  <p>
+    Bijoux réalisés à la main,<br>
+    gardiens de souvenirs.<br><br>
+    Argent 925 uniquement.
+  </p>
 
 </section>
 
@@ -229,25 +254,25 @@ Argent 925 uniquement.
 
 <section id="contact" class="contact">
 
-<h2>Contact</h2>
+  <h2>Contact</h2>
 
-<p>
-Pour toute commande ou question,
-écris-moi directement.
-</p>
+  <p>
+    Pour toute commande ou question,
+    écris-moi directement.
+  </p>
 
-<p>
-<a href="mailto:prune-berger@orange.fr">
-prune-berger@orange.fr
-</a>
-</p>
+  <p>
+    <a href="mailto:prune-berger@orange.fr">
+      prune-berger@orange.fr
+    </a>
+  </p>
 
-<p>
-Instagram :
-<a href="https://instagram.com/pruneberger" target="_blank">
-@pruneberger
-</a>
-</p>
+  <p>
+    Instagram :
+    <a href="https://instagram.com/pruneberger" target="_blank">
+      @pruneberger
+    </a>
+  </p>
 
 </section>
 
@@ -258,16 +283,20 @@ Instagram :
 </footer>
 
 <script>
-
-function show(id) {
-
-document.getElementById(id)
-.scrollIntoView({
-behavior: "smooth"
-});
-
+function changeImage(image) {
+  document.getElementById("product-image").src = image;
 }
 
+function commander() {
+  window.location.href =
+    "mailto:prune-berger@orange.fr?subject=Commande Pierre de vacances&body=Bonjour, je souhaite commander le bijou Pierre de vacances.";
+}
+
+function show(id) {
+  document.getElementById(id).scrollIntoView({
+    behavior: "smooth"
+  });
+}
 </script>
 
 </body>
