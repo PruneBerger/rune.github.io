@@ -6,7 +6,6 @@
 <title>Rune. | Boutique de Bijoux</title>
 
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
 
 body {
@@ -23,39 +22,40 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 40px;
+  padding: 8px 40px;
   background: white;
-  color: black;
   position: sticky;
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid #eee;
+  min-height: 90px;
 }
 
-.logo{
-  display:flex;
-  align-items:center;
+.logo {
+  display: flex;
+  align-items: center;
 }
 
-.logo img{
-  height:90px;
-  width:auto;
-  display:block;
+.logo img {
+  height: 120px;
+  width: auto;
+  display: block;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 35px;
   margin: 0;
   padding: 0;
 }
 
 nav ul li {
   cursor: pointer;
-  transition: 0.3s;
-  font-size: 14px;
+  font-size: 13px;
   text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.3s;
 }
 
 nav ul li:hover {
@@ -97,7 +97,6 @@ nav ul li:hover {
   font-size: 12px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  margin-top: -5px;
 }
 
 /* SECTION */
@@ -123,15 +122,11 @@ h2 {
   gap: 40px;
 }
 
-.produit {
-  transition: 0.3s;
-}
-
 .produit img {
   width: 100%;
   height: 420px;
   object-fit: cover;
-  transition: 0.4s ease;
+  transition: 0.4s;
 }
 
 .produit img:hover {
@@ -141,9 +136,7 @@ h2 {
 .produit h3 {
   margin-top: 20px;
   font-size: 15px;
-  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 .prix {
@@ -151,8 +144,6 @@ h2 {
   color: #666;
   margin-top: 10px;
 }
-
-/* LIENS */
 
 .produit a {
   text-decoration: none;
@@ -177,11 +168,6 @@ h2 {
 .contact a {
   text-decoration: none;
   color: black;
-  transition: 0.3s;
-}
-
-.contact a:hover {
-  opacity: 0.6;
 }
 
 /* FOOTER */
@@ -191,7 +177,6 @@ footer {
   padding: 40px;
   color: #888;
   font-size: 12px;
-  letter-spacing: 1px;
 }
 
 /* MOBILE */
@@ -200,7 +185,18 @@ footer {
 
   nav {
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
+    padding: 10px 20px;
+  }
+
+  .logo img {
+    height: 90px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
   }
 
   .hero h1 {
@@ -208,14 +204,12 @@ footer {
   }
 
 }
-
 </style>
 </head>
 
 <body>
 
 <!-- NAVBAR -->
-
 <nav>
 
 <div class="logo">
@@ -232,157 +226,89 @@ footer {
 </nav>
 
 <!-- HERO -->
-
 <div class="hero" id="home">
-
-<div class="hero-text">
-  <h1>Rune Studio</h1>
-  <p>BY PRUNE BERGER</p>
-</div>
-
+  <div class="hero-text">
+    <h1>Rune Studio</h1>
+    <p>BY PRUNE BERGER</p>
+  </div>
 </div>
 
 <!-- BOUTIQUE -->
-
 <section id="shop">
 
 <h2>Collection</h2>
 
 <div class="produits">
 
-<!-- PRODUIT 1 -->
-
 <div class="produit">
-
 <a href="produit-lady.html">
 <img src="IMG_94482.JPG">
 </a>
-
 <h3>The Lady Whispering</h3>
-
 <p class="prix">150€</p>
-
-<a href="produit-lady.html">
-Voir le produit
-</a>
-
+<a href="produit-lady.html">Voir le produit</a>
 </div>
 
-<!-- PRODUIT 2 -->
-
 <div class="produit">
-
 <a href="produit-bague.html">
 <img src="pierre2.png">
 </a>
-
 <h3>Bague pierre de vacances</h3>
-
 <p class="prix">110€</p>
-
-<a href="produit-bague.html">
-Voir le produit
-</a>
-
+<a href="produit-bague.html">Voir le produit</a>
 </div>
 
-<!-- PRODUIT 3 -->
-
 <div class="produit">
-
 <a href="produit-rune.html">
 <img src="IMG_4047.png">
 </a>
-
 <h3>Rune</h3>
-
 <p class="prix">110€</p>
-
-<a href="produit-rune.html">
-Voir le produit
-</a>
-
+<a href="produit-rune.html">Voir le produit</a>
 </div>
 
-<!-- PRODUIT 4 -->
-
 <div class="produit">
-
 <a href="produit-surmesure.html">
 <img src="IMG_3340.png">
 </a>
-
 <h3>Bijoux sur mesure</h3>
-
 <p class="prix">200€</p>
-
-<a href="produit-surmesure.html">
-Voir le produit
-</a>
-
+<a href="produit-surmesure.html">Voir le produit</a>
 </div>
 
 </div>
-
 </section>
 
 <!-- À PROPOS -->
-
 <section id="about">
-
 <h2>À propos</h2>
-
 <p>
 Bijoux réalisés à la main,<br>
 gardiens de souvenirs.<br><br>
 Argent 925 uniquement.
 </p>
-
 </section>
 
 <!-- CONTACT -->
-
 <section id="contact" class="contact">
-
 <h2>Contact</h2>
-
-<p>
-Pour toute commande ou question,
-écris-moi directement.
-</p>
-
-<p>
-<a href="mailto:prune-berger@orange.fr">
-prune-berger@orange.fr
-</a>
-</p>
-
+<p>Pour toute commande ou question, écris-moi directement.</p>
+<p><a href="mailto:prune-berger@orange.fr">prune-berger@orange.fr</a></p>
 <p>
 Instagram :
-<a href="https://instagram.com/pruneberger" target="_blank">
-@pruneberger
-</a>
+<a href="https://instagram.com/pruneberger" target="_blank">@pruneberger</a>
 </p>
-
 </section>
 
 <!-- FOOTER -->
-
 <footer>
 © 2026 Rune Studio — Tous droits réservés
 </footer>
 
 <script>
-
-function show(id) {
-
-document.getElementById(id)
-.scrollIntoView({
-behavior: "smooth"
-});
-
+function show(id){
+  document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
-
 </script>
 
 </body>
