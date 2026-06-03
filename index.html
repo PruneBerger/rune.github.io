@@ -32,11 +32,15 @@ nav {
   border-bottom: 1px solid #eee;
 }
 
-.logo {
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
+.logo{
+  display:flex;
+  align-items:center;
+}
+
+.logo img{
+  height:60px;
+  width:auto;
+  display:block;
 }
 
 nav ul {
@@ -214,7 +218,9 @@ footer {
 
 <nav>
 
-<div class="logo">Rune.</div>
+<div class="logo">
+    <img src="logo.png" alt="Rune Studio">
+</div>
 
 <ul>
 <li onclick="show('home')">Accueil</li>
