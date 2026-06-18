@@ -64,6 +64,8 @@ nav ul li:hover {
   opacity: 0.5;
 }
 
+/* MOBILE NAV */
+
 @media(max-width:768px){
 
   nav {
@@ -88,7 +90,6 @@ nav ul li:hover {
   .hero h1 {
     font-size: 42px;
   }
-
 }
 
 /* HERO */
@@ -128,7 +129,7 @@ nav ul li:hover {
   text-transform: uppercase;
 }
 
-/* SECTION */
+/* SECTIONS */
 
 section {
   padding: 90px 40px;
@@ -207,32 +208,6 @@ footer {
   color: #888;
   font-size: 12px;
 }
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-  nav {
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px 20px;
-  }
-
-  .logo img {
-    height: 90px;
-  }
-
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
-
-  .hero h1 {
-    font-size: 42px;
-  }
-
-}
 </style>
 </head>
 
@@ -241,21 +216,23 @@ footer {
 <!-- NAVBAR -->
 <nav>
 
-<div class="logo">
+  <div class="logo">
     <span>PRUNE BERGER</span>
-</div>
+  </div>
 
-<ul>
-<li onclick="show('home')">Accueil</li>
-<li onclick="show('shop')">Boutique</li>
-<li onclick="show('about')">À propos</li>
-<li onclick="show('contact')">Contact</li>
-</ul>
+  <ul>
+    <li onclick="show('home')">Accueil</li>
+    <li onclick="show('shop')">Boutique</li>
+    <li onclick="show('about')">À propos</li>
+    <li onclick="show('contact')">Contact</li>
+  </ul>
+
+</nav>
 
 <!-- HERO -->
 <div class="hero" id="home">
   <div class="hero-text">
-    <h1>Rune Studio</h1>
+    <h1>PRUNE BERGER</h1>
     <p>BY PRUNE BERGER</p>
   </div>
 </div>
