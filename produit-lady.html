@@ -29,12 +29,12 @@ nav {
   border-bottom: 1px solid #eee;
 }
 
-/* LOGO */
-.logo img{
-  height:24px;
-  width:auto;
-  display:block;
-  cursor:pointer;
+/* LOGO ULTRA PETIT */
+.logo img {
+  height: 24px;
+  width: auto;
+  display: block;
+  cursor: pointer;
 }
 
 /* MENU */
@@ -109,7 +109,6 @@ nav ul li:hover {
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 10px;
 }
 
 .subtitle {
@@ -190,23 +189,29 @@ footer {
   padding: 40px;
   color: #888;
   font-size: 12px;
-  letter-spacing: 1px;
 }
 
-/* MOBILE */
-@media(max-width:768px){
+/* MOBILE (CORRIGÉ) */
+@media (max-width:768px){
 
   nav {
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
+    padding: 15px 20px;
   }
 
   .logo img{
-    height:12px;
+    height: 10px; /* encore plus petit sur mobile */
+  }
+
+  nav ul{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
   }
 
   .container {
-    padding: 40px 30px;
+    padding: 40px 20px;
     gap: 40px;
   }
 
@@ -222,7 +227,6 @@ footer {
   .info {
     padding-top: 0;
   }
-
 }
 </style>
 </head>
@@ -231,84 +235,64 @@ footer {
 
 <!-- NAVBAR -->
 <nav>
+  <div class="logo" onclick="window.location.href='index.html'">
+    <img src="pruneberger.png" alt="Rune">
+  </div>
 
-<div class="logo" onclick="window.location.href='index.html'">
-  <img src="pruneberger.png" alt="Rune">
-</div>
-
-<ul>
-<li onclick="show('product')">Produit</li>
-<li onclick="show('about')">À propos</li>
-<li onclick="show('contact')">Contact</li>
-</ul>
-
+  <ul>
+    <li onclick="show('product')">Produit</li>
+    <li onclick="show('about')">À propos</li>
+    <li onclick="show('contact')">Contact</li>
+  </ul>
 </nav>
 
 <!-- PRODUIT -->
 <div class="container" id="product">
+  <div class="images">
+    <div class="main-image">
+      <img id="product-image" src="image.png" alt="The Lady Whispering">
+    </div>
 
-<div class="images">
+    <div class="thumbnails">
+      <img src="image.png" onclick="changeImage(this.src)">
+      <img src="image (3).png" onclick="changeImage(this.src)">
+      <img src="image (1).png" onclick="changeImage(this.src)">
+      <img src="image (2).png" onclick="changeImage(this.src)">
+    </div>
+  </div>
 
-<div class="main-image">
-<img id="product-image" src="image.png" alt="The Lady Whispering">
-</div>
+  <div class="info">
+    <h1>The Lady Whispering</h1>
+    <p class="subtitle">ARGENT 925 • PIÈCE UNIQUE</p>
+    <p class="prix">150€</p>
 
-<div class="thumbnails">
-<img src="image.png" onclick="changeImage(this.src)">
-<img src="image (3).png" onclick="changeImage(this.src)">
-<img src="image (1).png" onclick="changeImage(this.src)">
-<img src="image (2).png" onclick="changeImage(this.src)">
-</div>
+    <p class="description">
+      The Lady Whispering s’inspire de l’architecture en coupole de la cathédrale Saint-Paul de Londres.
+      <br><br>
+      Pensée en souvenir d’un voyage symbolique, elle évoque une cage gardienne de temps.
+      <br><br>
+      Chaque pièce est réalisée à la main en argent 925.
+    </p>
 
-</div>
-
-<div class="info">
-
-<h1>The Lady Whispering</h1>
-
-<p class="subtitle">ARGENT 925 • PIÈCE UNIQUE</p>
-
-<p class="prix">150€</p>
-
-<p class="description">
-The Lady Whispering s’inspire de l’architecture en coupole
-de la cathédrale Saint-Paul de Londres.
-<br><br>
-Pensée en souvenir d’un voyage symbolique,
-elle évoque l'architecture londonienne ou une cage, gardienne de temps.
-<br><br>
-Chaque pièce est entièrement réalisée à la main en argent 925.
-</p>
-
-<button onclick="commander()">Commander</button>
-
-</div>
-
+    <button onclick="commander()">Commander</button>
+  </div>
 </div>
 
 <!-- À PROPOS -->
 <section id="about">
-<h2>À propos</h2>
-<p>
-Bijoux réalisés à la main,<br>
-gardiens de souvenirs.<br><br>
-Argent 925 uniquement.
-</p>
+  <h2>À propos</h2>
+  <p>Bijoux réalisés à la main,<br>gardiens de souvenirs.<br><br>Argent 925 uniquement.</p>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="contact">
-<h2>Contact</h2>
-
-<p>Pour toute commande ou question, écris-moi directement.</p>
-
-<p><a href="mailto:prune-berger@orange.fr">prune-berger@orange.fr</a></p>
-
-<p>
-Instagram :
-<a href="https://instagram.com/pruneberger" target="_blank">@pruneberger</a>
-</p>
-
+  <h2>Contact</h2>
+  <p>Pour toute commande ou question, écris-moi directement.</p>
+  <p><a href="mailto:prune-berger@orange.fr">prune-berger@orange.fr</a></p>
+  <p>
+    Instagram :
+    <a href="https://instagram.com/pruneberger" target="_blank">@pruneberger</a>
+  </p>
 </section>
 
 <!-- FOOTER -->
@@ -317,20 +301,18 @@ Instagram :
 </footer>
 
 <script>
-
 function changeImage(image){
   document.getElementById("product-image").src = image;
 }
 
 function commander(){
   window.location.href =
-  "mailto:prune-berger@orange.fr?subject=Commande The Lady Whispering&body=Bonjour, je souhaite commander le bijou The Lady Whispering.";
+  "mailto:prune-berger@orange.fr?subject=Commande The Lady Whispering&body=Bonjour, je souhaite commander ce bijou.";
 }
 
 function show(id){
   document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
-
 </script>
 
 </body>
