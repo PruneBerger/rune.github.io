@@ -6,7 +6,6 @@
 <title>Rune | Rune Studio</title>
 
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
 
 body {
@@ -18,7 +17,6 @@ body {
 }
 
 /* NAVBAR */
-
 nav {
   display: flex;
   justify-content: space-between;
@@ -31,13 +29,15 @@ nav {
   border-bottom: 1px solid #eee;
 }
 
-logo img{
+/* LOGO */
+.logo img{
   height:24px;
   width:auto;
   display:block;
   cursor:pointer;
 }
 
+/* MENU */
 nav ul {
   list-style: none;
   display: flex;
@@ -58,7 +58,6 @@ nav ul li:hover {
 }
 
 /* PRODUIT */
-
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -68,7 +67,6 @@ nav ul li:hover {
 }
 
 /* IMAGES */
-
 .images {
   flex: 1;
   min-width: 320px;
@@ -99,12 +97,11 @@ nav ul li:hover {
 }
 
 /* INFOS */
-
 .info {
   flex: 1;
   min-width: 320px;
-  padding-top: 40px;
   max-width: 480px;
+  padding-top: 40px;
 }
 
 .info h1 {
@@ -126,7 +123,6 @@ nav ul li:hover {
   margin-top: 30px;
   font-size: 14px;
   color: #777;
-  letter-spacing: 1px;
 }
 
 .description {
@@ -136,8 +132,7 @@ nav ul li:hover {
   font-size: 14px;
 }
 
-/* BOUTON PREMIUM */
-
+/* BUTTON */
 button {
   margin-top: 45px;
   background: transparent;
@@ -156,8 +151,7 @@ button:hover {
   color: white;
 }
 
-/* SECTION */
-
+/* SECTIONS */
 section {
   padding: 90px 40px;
   text-align: center;
@@ -172,7 +166,6 @@ h2 {
 }
 
 /* CONTACT */
-
 .contact {
   background: #fafafa;
 }
@@ -192,7 +185,6 @@ h2 {
 }
 
 /* FOOTER */
-
 footer {
   text-align: center;
   padding: 40px;
@@ -202,12 +194,15 @@ footer {
 }
 
 /* MOBILE */
-
 @media(max-width:768px){
 
   nav {
     flex-direction: column;
     gap: 20px;
+  }
+
+  .logo img{
+    height:12px;
   }
 
   .container {
@@ -229,14 +224,12 @@ footer {
   }
 
 }
-
 </style>
 </head>
 
 <body>
 
 <!-- NAVBAR -->
-
 <nav>
 
 <div class="logo" onclick="window.location.href='index.html'">
@@ -252,7 +245,6 @@ footer {
 </nav>
 
 <!-- PRODUIT -->
-
 <div class="container" id="product">
 
 <div class="images">
@@ -274,69 +266,48 @@ footer {
 
 <h1>Rune</h1>
 
-<p class="subtitle">
-ARGENT 925 • 
-</p>
+<p class="subtitle">ARGENT 925</p>
 
 <p class="prix">110€</p>
 
 <p class="description">
 Un bijou aérien, pensé pour accompagner le quotidien comme un objet de mémoire.
 <br><br>
-Chaque pièce est réalisée à la main avec soin,
-en argent 925.
+Chaque pièce est réalisée à la main avec soin en argent 925.
 </p>
 
-<button onclick="commander()">
-Commander
-</button>
+<button onclick="commander()">Commander</button>
 
 </div>
 
 </div>
 
 <!-- À PROPOS -->
-
 <section id="about">
-
 <h2>À propos</h2>
-
 <p>
 Bijoux réalisés à la main,<br>
 gardiens de souvenirs.<br><br>
 Argent 925 uniquement.
 </p>
-
 </section>
 
 <!-- CONTACT -->
-
 <section id="contact" class="contact">
-
 <h2>Contact</h2>
 
-<p>
-Pour toute commande ou question,
-écris-moi directement.
-</p>
+<p>Pour toute commande ou question, écris-moi directement.</p>
 
-<p>
-<a href="mailto:prune-berger@orange.fr">
-prune-berger@orange.fr
-</a>
-</p>
+<p><a href="mailto:prune-berger@orange.fr">prune-berger@orange.fr</a></p>
 
 <p>
 Instagram :
-<a href="https://instagram.com/pruneberger" target="_blank">
-@pruneberger
-</a>
+<a href="https://instagram.com/pruneberger" target="_blank">@pruneberger</a>
 </p>
 
 </section>
 
 <!-- FOOTER -->
-
 <footer>
 © 2026 Rune Studio — Tous droits réservés
 </footer>
@@ -353,10 +324,7 @@ function commander(){
 }
 
 function show(id){
-  document.getElementById(id)
-  .scrollIntoView({
-    behavior: "smooth"
-  });
+  document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
 
 </script>
